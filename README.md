@@ -32,4 +32,20 @@ This project is a submission for Round 1 of the Frontend Battle. It is a fully r
 -ChatGpt
 -Copilot
 
+## 🚀 How to Run Locally
+
+1. Clone the repo  
+2. Open `index.html` using Live Server or in your browser
+
+```bash
+git clone https://github.com/ananya-ak02/FRONTEND-BATTLE-PROJECT.git
+cd FRONTEND-BATTLE-PROJECT
+open index.html
+
+🌐 Deployment
+Hosted live on GitHub Pages:
+https://ananya-ak02.github.io/FRONTEND-BATTLE-PROJECT/
+
+
+
 

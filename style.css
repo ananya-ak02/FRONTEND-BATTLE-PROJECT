@@ -3,14 +3,23 @@
   --text-light: #000000;
   --bg-dark: #181818;
   --text-dark: #ffffff;
+  --primary-color: #ff5722;
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   transition: background 0.3s, color 0.3s;
+  background: var(--bg-light);
+  color: var(--text-light);
 }
 
+/* Loader */
 #loader {
   position: fixed;
   inset: 0;
@@ -24,14 +33,15 @@ body {
 #loader.fadeout {
   opacity: 0;
   transition: opacity 0.5s ease-out;
+  pointer-events: none;
 }
 
-
+/* Theme Toggle */
 #theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
-  z-index: 10;
+  z-index: 1000;
   background: #ddd;
   border: none;
   padding: 10px;
@@ -39,6 +49,7 @@ body {
   cursor: pointer;
 }
 
+/* Hero */
 .hero {
   position: relative;
   height: 100vh;
@@ -48,7 +59,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
 }
 .hero-text {
   position: absolute;
@@ -59,7 +69,14 @@ body {
   text-align: center;
   z-index: 2;
 }
+.hero-text h1 {
+  font-size: 3rem;
+}
+.hero-text p {
+  font-size: 1.2rem;
+}
 
+/* Ripple Effect Button */
 .ripple-section {
   padding: 3rem;
   text-align: center;
@@ -67,7 +84,7 @@ body {
 .ripple {
   padding: 1rem 2rem;
   border: none;
-  background-color: #ff5722;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 50px;
   cursor: pointer;
@@ -82,6 +99,10 @@ body {
   transform: scale(0);
   animation: ripple-effect 0.6s linear;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 @keyframes ripple-effect {
   to {
@@ -90,6 +111,7 @@ body {
   }
 }
 
+/* Customer Section */
 .customer-section {
   position: relative;
   height: 100vh;
@@ -103,7 +125,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--overlay-dark);
   color: white;
   width: 100%;
   height: 100%;
@@ -111,8 +133,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
+/* Carousel Section */
 .carousel-section {
   padding: 3rem;
   text-align: center;
@@ -121,6 +145,7 @@ body {
   display: flex;
   overflow: hidden;
   justify-content: center;
+  align-items: center;
 }
 .carousel-item {
   min-width: 200px;
@@ -141,6 +166,7 @@ body {
   cursor: pointer;
 }
 
+/* Features Section */
 .features {
   padding: 3rem;
   text-align: center;
@@ -151,14 +177,13 @@ body {
   border-radius: 8px;
 }
 
+/* Footer */
 footer {
   background: #111;
   color: white;
   text-align: center;
   padding: 1rem;
 }
-
-/* Dark Mode */
 body.dark {
   background: var(--bg-dark);
   color: var(--text-dark);
@@ -167,7 +192,7 @@ body.dark footer {
   background: #000;
 }
 
-/* Scroll Animations */
+/* Scroll Animation */
 [data-animate] {
   opacity: 0;
   transform: translateY(40px);
@@ -181,12 +206,27 @@ body.dark footer {
 /* Media Queries */
 @media (max-width: 768px) {
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   .carousel {
     flex-direction: column;
   }
   .carousel-item {
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .ripple-section {
+    padding: 2rem 1rem;
+  }
+  .ripple {
+    padding: 0.8rem 1.5rem;
+  }
+  .carousel-item {
+    min-width: 150px;
+  }
+  .hero-text p {
+    font-size: 1rem;
   }
 }

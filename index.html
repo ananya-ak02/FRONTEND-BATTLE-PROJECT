@@ -2,23 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Frontend Battle - Round 1</title>
+
+  <title>Frontend Battle – Round 1 | EdTech Platform</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="An interactive EdTech platform demo built for Frontend Battle Round 1. Includes parallax, carousel, ripple effects, and more." />
+  <meta name="author" content="Ananya Ak" />
+  <meta name="keywords" content="frontend battle, edtech, html css js, animations, parallax, ripple, carousel" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <video src="assets/loader.mp4" autoplay muted loop></video>
+  <!-- Loader Section -->
+  <div id="loader" aria-label="Loading content">
+    <video src="assets/loader.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
   </div>
 
-  <!-- Light/Dark Mode Toggle -->
-  <button id="theme-toggle">🌙</button>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" aria-label="Toggle Light and Dark Mode">🌙</button>
 
-  <!-- Hero / Homepage Section -->
-  <header class="hero parallax">
-    <video src="assets/homepage.mp4" autoplay muted loop></video>
+  <!-- Hero / Parallax Section -->
+  <header class="hero parallax" role="banner">
+    <video src="assets/homepage.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
     <div class="hero-text">
       <h1>Welcome to Our Platform</h1>
       <p>Level up your skills with interactive tools</p>
@@ -26,43 +41,44 @@
   </header>
 
   <!-- Ripple Button Section -->
-  <section class="ripple-section">
-    <h2>Explore Features</h2>
-    <button class="ripple">Click Me</button>
+  <section class="ripple-section" aria-labelledby="explore-features">
+    <h2 id="explore-features">Explore Features</h2>
+    <button class="ripple" aria-label="Click to interact with ripple effect">Click Me</button>
   </section>
 
   <!-- Customer Section -->
-  <section class="customer-section" id="customers">
-    <video src="assets/customer-section.mp4" autoplay muted loop></video>
+  <section class="customer-section" id="customers" role="region" aria-labelledby="customer-title">
+    <video src="assets/customer-section.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
     <div class="overlay">
-      <h2>What Our Customers Say</h2>
+      <h2 id="customer-title">What Our Customers Say</h2>
       <p>Join thousands of satisfied learners!</p>
     </div>
   </section>
 
   <!-- Carousel Section -->
-  <section class="carousel-section">
-    <h2>Our Services</h2>
-    <div class="carousel">
-      <div class="carousel-item active">Web Dev</div>
-      <div class="carousel-item">UI/UX</div>
-      <div class="carousel-item">Data Science</div>
+  <section class="carousel-section" aria-labelledby="carousel-title">
+    <h2 id="carousel-title">Our Services</h2>
+    <div class="carousel" role="list">
+      <div class="carousel-item active" role="listitem">Web Dev</div>
+      <div class="carousel-item" role="listitem">UI/UX</div>
+      <div class="carousel-item" role="listitem">Data Science</div>
     </div>
-    <button class="carousel-prev">‹</button>
-    <button class="carousel-next">›</button>
+    <button class="carousel-prev" aria-label="Previous service slide">‹</button>
+    <button class="carousel-next" aria-label="Next service slide">›</button>
   </section>
 
-  <!-- Graph / Feature Section -->
-  <section class="features">
-    <h2>Platform Growth</h2>
-    <img src="assets/graph.png" alt="Platform growth chart" />
+  <!-- Features / Graph Section -->
+  <section class="features" aria-labelledby="growth-title">
+    <h2 id="growth-title">Platform Growth</h2>
+    <img src="assets/graph.png" alt="Line chart showing platform user growth" />
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 EdTech Co. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
